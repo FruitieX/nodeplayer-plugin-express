@@ -1,6 +1,6 @@
 {
   "name": "nodeplayer-plugin-express",
-  "version": "0.1.95",
+  "version": "0.1.96",
   "description": "Initializes an express.js server that can be used from other modules",
   "main": "index.js",
   "scripts": {
