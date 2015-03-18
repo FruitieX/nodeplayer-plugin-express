@@ -1,5 +1,5 @@
 {
-  "name": "nodeplayer-plugin-expressjs",
+  "name": "nodeplayer-plugin-express",
   "version": "0.1.95",
   "description": "Initializes an express.js server that can be used from other modules",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/FruitieX/nodeplayer-plugin-expressjs.git"
+    "url": "https://github.com/FruitieX/nodeplayer-plugin-express.git"
   },
   "author": "FruitieX",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FruitieX/nodeplayer-plugin-expressjs/issues"
+    "url": "https://github.com/FruitieX/nodeplayer-plugin-express/issues"
   },
-  "homepage": "https://github.com/FruitieX/nodeplayer-plugin-expressjs",
+  "homepage": "https://github.com/FruitieX/nodeplayer-plugin-express",
   "dependencies": {
     "express": "^4.12.3",
     "nodeplayer-config": "*"
