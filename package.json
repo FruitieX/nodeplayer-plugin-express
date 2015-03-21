@@ -1,6 +1,6 @@
 {
   "name": "nodeplayer-plugin-express",
-  "version": "0.1.96",
+  "version": "0.1.99",
   "description": "Initializes an express.js server that can be used from other modules",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/FruitieX/nodeplayer-plugin-express",
   "dependencies": {
-    "express": "^4.12.3",
-    "nodeplayer-config": "*"
+    "express": "^4.12.3"
   }
 }
