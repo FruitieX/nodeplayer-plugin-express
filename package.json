@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FruitieX/nodeplayer-plugin-express",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "nodeplayer": "^0.1.992"
   }
 }
