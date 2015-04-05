@@ -3,6 +3,8 @@
 var MODULE_NAME = 'plugin-express';
 
 var express = require('express');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var https = require('https');
 var http = require('http');
 var fs = require('fs');
@@ -25,6 +27,7 @@ exports.init = function(player, logger, callback) {
             requestCert: config.requestCert,
             rejectUnauthorized: config.rejectUnauthorized
         };
+        // TODO: deprecated!
         player.app.set('tls', true);
         player.httpServer = https.createServer(options, player.app)
                 .listen(process.env.PORT || config.port);
@@ -32,6 +35,10 @@ exports.init = function(player, logger, callback) {
         player.httpServer = http.createServer(player.app)
                 .listen(process.env.PORT || config.port);
     }
+
+    player.app.use(cookieParser());
+    player.app.use(bodyParser.json());
+    player.app.use(bodyParser.urlencoded({extended: true}));
 
     callback();
 };
