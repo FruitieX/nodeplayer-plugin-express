@@ -37,7 +37,7 @@ exports.init = function(player, logger, callback) {
     }
 
     player.app.use(cookieParser());
-    player.app.use(bodyParser.json(limit: '100mb'));
+    player.app.use(bodyParser.json({limit: '100mb'}));
     player.app.use(bodyParser.urlencoded({extended: true}));
 
     callback();
