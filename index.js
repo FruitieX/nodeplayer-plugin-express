@@ -21,9 +21,9 @@ exports.init = function(player, logger, callback) {
     if (config.tls) {
         options = {
             tls: config.tls,
-            key: fs.readFileSync(config.tlsKey),
-            cert: fs.readFileSync(config.tlsCert),
-            ca: fs.readFileSync(config.tlsCa),
+            key: config.key ? fs.readFileSync(config.key) : undefined,
+            cert: config.cert ? fs.readFileSync(config.cert) : undefined,
+            ca: config.ca ? fs.readFileSync(config.ca) : undefined,
             requestCert: config.requestCert,
             rejectUnauthorized: config.rejectUnauthorized
         };
