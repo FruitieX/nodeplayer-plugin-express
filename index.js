@@ -14,8 +14,8 @@ var coreConfig = nodeplayerConfig.getConfig();
 var defaultConfig = require('./default-config.js');
 var config = nodeplayerConfig.getConfig(MODULE_NAME, defaultConfig);
 
-exports.init = function(player, logger, callback) {
-    player.app = express();
+exports.init = function(vars, callback) {
+    vars.app = express();
 
     var options = {};
     if (config.tls) {
@@ -28,17 +28,17 @@ exports.init = function(player, logger, callback) {
             rejectUnauthorized: config.rejectUnauthorized
         };
         // TODO: deprecated!
-        player.app.set('tls', true);
-        player.httpServer = https.createServer(options, player.app)
+        vars.app.set('tls', true);
+        vars.httpServer = https.createServer(options, vars.app)
                 .listen(process.env.PORT || config.port);
     } else {
-        player.httpServer = http.createServer(player.app)
+        vars.httpServer = http.createServer(vars.app)
                 .listen(process.env.PORT || config.port);
     }
 
-    player.app.use(cookieParser());
-    player.app.use(bodyParser.json({limit: '100mb'}));
-    player.app.use(bodyParser.urlencoded({extended: true}));
+    vars.app.use(cookieParser());
+    vars.app.use(bodyParser.json({limit: '100mb'}));
+    vars.app.use(bodyParser.urlencoded({extended: true}));
 
     callback();
 };
